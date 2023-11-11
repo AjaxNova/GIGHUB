@@ -341,7 +341,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                                     bottom: 1),
                                                 child: ListTile(
                                                   leading: SizedBox(
-                                                    width: size.width * 0.6,
+                                                    width: size.width * 0.5,
                                                     child: Text(
                                                       ". ${entry.value}",
                                                       style: GoogleFonts.inter(
@@ -466,7 +466,7 @@ Column imagePart(String photoUrl) {
                 child: GestureDetector(
                   onTap: () async {
                     value.changeIsImageLoading();
-                    final file = await pickImage(ImageSource.gallery);
+                    final file = await pickImage(ImageSource.gallery, context);
                     if (file != null) {
                       value.setImage(file);
                       value.changeIsImageLoading();

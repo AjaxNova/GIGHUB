@@ -301,25 +301,28 @@ class _FinishYourProfilePageState extends State<FinishYourProfilePage> {
                                               (entry) => Padding(
                                                 padding: const EdgeInsets.only(
                                                     bottom: 1),
-                                                child: ListTile(
-                                                  leading: SizedBox(
-                                                    width: size.width * 0.6,
-                                                    child: Text(
-                                                      ". ${entry.value}",
-                                                      style: GoogleFonts.inter(
-                                                          fontSize: 16),
+                                                child: SizedBox(
+                                                  child: ListTile(
+                                                    leading: SizedBox(
+                                                      width: size.width * 0.3,
+                                                      child: Text(
+                                                        ". ${entry.value}",
+                                                        style:
+                                                            GoogleFonts.inter(
+                                                                fontSize: 16),
+                                                      ),
                                                     ),
-                                                  ),
-                                                  trailing: IconButton(
-                                                    onPressed: () {
-                                                      valueProfile
-                                                          .removeFromSkills(
-                                                              entry.key);
-                                                    },
-                                                    icon: const FaIcon(
-                                                      FontAwesomeIcons
-                                                          .circleXmark,
-                                                      size: 21,
+                                                    trailing: IconButton(
+                                                      onPressed: () {
+                                                        valueProfile
+                                                            .removeFromSkills(
+                                                                entry.key);
+                                                      },
+                                                      icon: const FaIcon(
+                                                        FontAwesomeIcons
+                                                            .circleXmark,
+                                                        size: 21,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),

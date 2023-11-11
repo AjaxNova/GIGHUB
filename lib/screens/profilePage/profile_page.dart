@@ -33,6 +33,8 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
     return Consumer<SelectPersonFromListProvider>(
       builder: (context, value, child) {
         return BlurryModalProgressHUD(
@@ -129,7 +131,7 @@ class ProfilePage extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                              height: 220,
+                              height: size.height * 0.36,
                               padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 image: DecorationImage(
@@ -149,8 +151,13 @@ class ProfilePage extends StatelessWidget {
                                         onTap: () {
                                           Navigator.pop(context);
                                         },
-                                        child: const LineIcon.arrowCircleLeft(
-                                          size: 38,
+                                        child: const Card(
+                                          shadowColor: Colors.white,
+                                          elevation: 40,
+                                          child: LineIcon.arrowCircleLeft(
+                                            size: 35,
+                                            color: Colors.black,
+                                          ),
                                         ),
                                       ),
                                       isHost
@@ -161,8 +168,12 @@ class ProfilePage extends StatelessWidget {
                                                     page: EditProfilePage(
                                                         userModel: userMod));
                                               },
-                                              child: const LineIcon.edit(
-                                                size: 33,
+                                              child: const Card(
+                                                color: Colors.white,
+                                                elevation: 5,
+                                                child: LineIcon.edit(
+                                                  size: 33,
+                                                ),
                                               ))
                                           : const SizedBox()
                                     ],

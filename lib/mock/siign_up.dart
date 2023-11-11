@@ -95,7 +95,7 @@ class _SignUpScreenPageState extends State<SignUpScreenPage> {
     return GestureDetector(
       onTap: () async {
         value.changeIsImageLoading();
-        final file = await pickImage(ImageSource.gallery);
+        final file = await pickImage(ImageSource.gallery, context);
         if (file != null) {
           value.setImage(file);
         }

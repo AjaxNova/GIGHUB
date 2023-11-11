@@ -32,7 +32,8 @@ class AddImageCard extends StatelessWidget {
                   value.file == null
                       ? GestureDetector(
                           onTap: () async {
-                            final image = await pickImage(ImageSource.gallery);
+                            final image =
+                                await pickImage(ImageSource.gallery, context);
                             value.setImage(image);
                           },
                           child: const Column(
@@ -67,8 +68,8 @@ class AddImageCard extends StatelessWidget {
                               right: 0,
                               child: GestureDetector(
                                 onTap: () async {
-                                  final file =
-                                      await pickImage(ImageSource.gallery);
+                                  final file = await pickImage(
+                                      ImageSource.gallery, context);
                                   if (file != null) {
                                     value.setImage(file);
                                   }

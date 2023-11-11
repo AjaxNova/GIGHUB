@@ -174,7 +174,7 @@ class CurrentJobResponcePagePosted extends StatelessWidget {
                                         ///waitng for the selected person to either accept or reject the offer
                                         ? Container(
                                             width: double.infinity,
-                                            height: 50,
+                                            height: size.width * 0.15,
                                             decoration: BoxDecoration(
                                                 color: test1,
                                                 borderRadius:
@@ -218,8 +218,9 @@ class CurrentJobResponcePagePosted extends StatelessWidget {
                                                     elevation: 2,
                                                     backgroundColor:
                                                         Colors.white,
-                                                    minimumSize:
-                                                        const Size(182, 50),
+                                                    minimumSize: Size(
+                                                        size.width * 0.6,
+                                                        size.height * 0.08),
                                                     shape:
                                                         RoundedRectangleBorder(
                                                       borderRadius:
@@ -330,11 +331,14 @@ class CurrentJobResponcePagePosted extends StatelessWidget {
                             jobMod.jobStatus == "selected" &&
                                     jobMod.isAcceptedBySelectedUser == false &&
                                     jobMod.isRejectedBySelectedUser == false
-                                ? Text(
-                                    "${userMod.username} , to  confirm the offer",
-                                    style: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 29,
+                                ? SizedBox(
+                                    width: size.width * 0.75,
+                                    child: Text(
+                                      "${userMod.username} , to  confirm the offer",
+                                      style: GoogleFonts.inter(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 29,
+                                      ),
                                     ),
                                   )
                                 : jobMod.isAcceptedBySelectedUser
@@ -353,11 +357,11 @@ class CurrentJobResponcePagePosted extends StatelessWidget {
                                         ),
                                       ),
                             SizedBox(
-                              height: size.height * 0.035,
+                              height: size.height * 0.016,
                             ),
                             SizedBox(
                               // color: Colors.red,
-                              width: size.width * 0.71,
+                              width: size.width * 0.89,
                               child: Center(
                                   child: jobMod.isAcceptedBySelectedUser ==
                                               false &&
@@ -366,29 +370,26 @@ class CurrentJobResponcePagePosted extends StatelessWidget {
                                       ? Text(
                                           "Sometimes people have trouble to reply soon feel free to wait or you could always change your prefrence anytime",
                                           style: GoogleFonts.inter(
-                                            fontSize: 17.5,
-                                            wordSpacing: .6,
-                                            letterSpacing: .5,
-                                            height: 1.6,
+                                            fontSize: 15.5,
+                                            wordSpacing: .5,
+                                            letterSpacing: .1,
                                           ),
                                         )
                                       : jobMod.isAcceptedBySelectedUser
                                           ? Text(
                                               "now you can chat with ayush arun in the chat screen . pe polite and humble in the chat always remember give respect and take respect",
                                               style: GoogleFonts.inter(
-                                                fontSize: 17.5,
-                                                wordSpacing: .6,
-                                                letterSpacing: .5,
-                                                height: 1.34,
+                                                fontSize: 15.5,
+                                                wordSpacing: .5,
+                                                letterSpacing: .1,
                                               ),
                                             )
                                           : Text(
                                               "its ok sometimes people have some inconvenience , now you can pick from the other users",
                                               style: GoogleFonts.inter(
-                                                fontSize: 17.5,
-                                                wordSpacing: .6,
-                                                letterSpacing: .5,
-                                                height: 1.34,
+                                                fontSize: 15.5,
+                                                wordSpacing: .5,
+                                                letterSpacing: .1,
                                               ),
                                             )),
                             ),
