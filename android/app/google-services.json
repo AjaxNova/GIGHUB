@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "210768281009",
+    "project_id": "litejobs-9f389",
+    "storage_bucket": "litejobs-9f389.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210768281009:android:3a7b35eeb8506b133dd190",
+        "android_client_info": {
+          "package_name": "com.example.lite_jobs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210768281009-im325gu7lc94ac9fkltnrn80un59p5cn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lite_jobs",
+            "certificate_hash": "b9ce3a72b2463ffa348dad4e117aa7c28bba4a8b"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG-EX4Bt11HrKaZN8p5-NIMnVuH9TYPYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210768281009-3s4v5nqtllfha0vnk1td0hsm5m5fs6og.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
