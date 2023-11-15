@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:lite_jobs/provider/auth_provider.dart';
+import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/screens/finishYourProfile/finish_your_profile_page.dart';
 import 'package:lite_jobs/server/auth/auth_functions.dart';
 import 'package:lite_jobs/utils/utils.dart';
 import 'package:provider/provider.dart';
 
-import '../screens/mainJobScreen/main_screen.dart';
+import '../../screens/mainJobScreen/main_screen.dart';
 
 class SigninProvider extends ChangeNotifier {
   final AuthenticationMethods authenticationMethods = AuthenticationMethods();

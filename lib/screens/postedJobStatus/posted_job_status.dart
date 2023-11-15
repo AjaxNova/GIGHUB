@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:lite_jobs/provider/auth_provider.dart';
+import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/screens/jobDetails/viewApplicants.dart/view_applicants.dart';
 import 'package:provider/provider.dart';
 

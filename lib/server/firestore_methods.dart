@@ -2,8 +2,8 @@ import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:lite_jobs/controller/provider/post_job_provider.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/provider/post_job_provider.dart';
 import 'package:lite_jobs/server/auth/storage_methods.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';

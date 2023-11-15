@@ -7,8 +7,8 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:lite_jobs/controller/provider/edit_your_profile_provider.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/provider/edit_your_profile_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../common/widgets/special_appbar_widget.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:lite_jobs/provider/post_job_provider.dart';
+import 'package:lite_jobs/controller/provider/post_job_provider.dart';
 import 'package:lite_jobs/screens/auth/functions/pick_image.dart';
 import 'package:provider/provider.dart';
 

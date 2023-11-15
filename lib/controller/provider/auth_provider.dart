@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lite_jobs/models/user_model.dart';
 
-import '../server/auth/auth_functions.dart';
+import '../../server/auth/auth_functions.dart';
 
 class AuthProvider extends ChangeNotifier {
   String? uid;

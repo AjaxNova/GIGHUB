@@ -2,18 +2,18 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:lite_jobs/provider/applied_jobs_provider.dart';
-import 'package:lite_jobs/provider/auth_provider.dart';
-import 'package:lite_jobs/provider/edit_your_profile_provider.dart';
-import 'package:lite_jobs/provider/finish_your_profile_provider.dart';
-import 'package:lite_jobs/provider/home_screen_provider.dart';
-import 'package:lite_jobs/provider/job_description_page_provider.dart';
-import 'package:lite_jobs/provider/post_job_provider.dart';
-import 'package:lite_jobs/provider/searc_screen_provider.dart';
-import 'package:lite_jobs/provider/select_person_from_applied_list.dart';
-import 'package:lite_jobs/provider/selected_user_status_provider.dart';
-import 'package:lite_jobs/provider/sign_in_screen_provider.dart';
-import 'package:lite_jobs/provider/sign_up_screen_provider.dart';
+// import 'package:lite_jobs/controller/applied_jobs_provider.dart';
+import 'package:lite_jobs/controller/provider/auth_provider.dart';
+import 'package:lite_jobs/controller/provider/edit_your_profile_provider.dart';
+import 'package:lite_jobs/controller/provider/finish_your_profile_provider.dart';
+import 'package:lite_jobs/controller/provider/home_screen_provider.dart';
+import 'package:lite_jobs/controller/provider/job_description_page_provider.dart';
+import 'package:lite_jobs/controller/provider/post_job_provider.dart';
+import 'package:lite_jobs/controller/provider/searc_screen_provider.dart';
+import 'package:lite_jobs/controller/provider/select_person_from_applied_list.dart';
+import 'package:lite_jobs/controller/provider/selected_user_status_provider.dart';
+import 'package:lite_jobs/controller/provider/sign_in_screen_provider.dart';
+import 'package:lite_jobs/controller/provider/sign_up_screen_provider.dart';
 import 'package:lite_jobs/screens/auth/initialPage/initial_page.dart';
 import 'package:lite_jobs/screens/splashScreen/splash_screen.dart';
 import 'package:provider/provider.dart';
@@ -62,9 +62,9 @@ class LiteJobs extends StatelessWidget {
           ChangeNotifierProvider(
             create: (context) => SelectedUserStatusProvider(),
           ),
-          ChangeNotifierProvider(
-            create: (context) => AppliedJobsProvider(),
-          ),
+          // ChangeNotifierProvider(
+          //   create: (context) => AppliedJobsProvider(),
+          // ),
           ChangeNotifierProvider(
             create: (context) => SelectPersonFromListProvider(),
           ),

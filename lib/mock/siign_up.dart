@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../provider/sign_up_screen_provider.dart';
 import '../../../../utils/colors/colors.dart';
+import '../controller/provider/sign_up_screen_provider.dart';
 import '../screens/auth/functions/pick_image.dart';
 import '../screens/auth/widget/custom_textfield.dart';
 

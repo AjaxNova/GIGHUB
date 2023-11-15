@@ -3,7 +3,7 @@ import 'package:lite_jobs/screens/finishYourProfile/finish_your_profile_page.dar
 import 'package:lite_jobs/screens/mainJobScreen/main_screen.dart';
 import 'package:provider/provider.dart';
 
-import '../../provider/auth_provider.dart';
+import '../../controller/provider/auth_provider.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

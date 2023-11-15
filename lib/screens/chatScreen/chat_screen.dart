@@ -7,11 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/provider/auth_provider.dart';
 import 'package:lite_jobs/utils/colors/colors.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
+import '../../controller/provider/auth_provider.dart';
 import '../../utils/utils.dart';
 
 class ChatScreen extends StatelessWidget {

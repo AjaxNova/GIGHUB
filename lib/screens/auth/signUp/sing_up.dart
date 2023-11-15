@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
-import 'package:lite_jobs/provider/sign_up_screen_provider.dart';
+import 'package:lite_jobs/controller/provider/sign_up_screen_provider.dart';
 import 'package:lite_jobs/screens/auth/signUp/widgets/image_selection_widget.dart';
 import 'package:lite_jobs/screens/auth/signUp/widgets/resgister_button.dart';
 import 'package:lite_jobs/screens/auth/signUp/widgets/textfields_area.dart';

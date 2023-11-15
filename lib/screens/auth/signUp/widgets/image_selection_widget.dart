@@ -8,7 +8,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import '../../../../provider/sign_up_screen_provider.dart';
+import '../../../../controller/provider/sign_up_screen_provider.dart';
 import '../../../../utils/colors/colors.dart';
 import '../../functions/pick_image.dart';
 

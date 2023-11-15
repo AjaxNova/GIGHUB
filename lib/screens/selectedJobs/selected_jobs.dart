@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
+import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/provider/auth_provider.dart';
 import 'package:lite_jobs/screens/mainJobScreen/widget/job_card_widget.dart';
 import 'package:provider/provider.dart';
 

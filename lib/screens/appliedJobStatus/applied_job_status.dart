@@ -10,7 +10,7 @@ import 'package:lite_jobs/utils/utils.dart';
 import 'package:provider/provider.dart';
 
 import '../../common/widgets/special_appbar_widget.dart';
-import '../../provider/auth_provider.dart';
+import '../../controller/provider/auth_provider.dart';
 import '../../utils/colors/colors.dart';
 
 class CurrentJobResponcePageApplied extends StatefulWidget {

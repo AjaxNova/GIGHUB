@@ -1,7 +1,7 @@
 import 'package:blurry_modal_progress_hud/blurry_modal_progress_hud.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:lite_jobs/provider/sign_in_screen_provider.dart';
+import 'package:lite_jobs/controller/provider/sign_in_screen_provider.dart';
 import 'package:lite_jobs/screens/auth/signIn/widgets/divider_widget.dart';
 import 'package:lite_jobs/screens/auth/signIn/widgets/forget_password_widget.dart';
 import 'package:lite_jobs/screens/auth/signIn/widgets/register_row.dart';

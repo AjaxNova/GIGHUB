@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
+import 'package:lite_jobs/controller/provider/select_person_from_applied_list.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/provider/select_person_from_applied_list.dart';
 import 'package:lite_jobs/screens/editProfilePage/edit_profile_page.dart';
 import 'package:lite_jobs/screens/jobDescription/jJobHostdetailsPage/widgets/custom_listtile.dart';
 import 'package:lite_jobs/screens/jobDescription/jJobHostdetailsPage/widgets/custom_listtile_for_recent.dart';
@@ -15,7 +15,7 @@ import 'package:lite_jobs/utils/colors/colors.dart';
 import 'package:lite_jobs/utils/utils.dart';
 import 'package:provider/provider.dart';
 
-import '../../provider/job_description_page_provider.dart';
+import '../../controller/provider/job_description_page_provider.dart';
 import '../jobDetails/job_details_host.dart';
 import '../mainJobScreen/main_screen.dart';
 

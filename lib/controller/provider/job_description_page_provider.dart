@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:lite_jobs/provider/auth_provider.dart';
+import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:provider/provider.dart';
 
 class JobDescriptionProvider extends ChangeNotifier {

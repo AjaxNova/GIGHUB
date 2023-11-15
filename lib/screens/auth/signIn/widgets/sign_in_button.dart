@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lite_jobs/provider/sign_in_screen_provider.dart';
+import 'package:lite_jobs/controller/provider/sign_in_screen_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../utils/colors/colors.dart';

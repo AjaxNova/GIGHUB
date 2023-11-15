@@ -3,15 +3,15 @@ import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lite_jobs/provider/auth_provider.dart';
+import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/screens/splashScreen/splash_screen.dart';
 import 'package:lite_jobs/server/auth/auth_functions.dart';
 import 'package:lite_jobs/utils/utils.dart';
 import 'package:provider/provider.dart';
 
-import '../models/user_model.dart';
-import '../screens/auth/signIn/sing_in.dart';
-import '../server/auth/storage_methods.dart';
+import '../../models/user_model.dart';
+import '../../screens/auth/signIn/sing_in.dart';
+import '../../server/auth/storage_methods.dart';
 
 class SignUpScreenProvider extends ChangeNotifier {
   final AuthenticationMethods authenticationMethods = AuthenticationMethods();

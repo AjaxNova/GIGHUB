@@ -6,7 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
-import 'package:lite_jobs/provider/post_job_provider.dart';
+import 'package:lite_jobs/controller/provider/post_job_provider.dart';
 import 'package:lite_jobs/screens/mainJobScreen/main_screen.dart';
 import 'package:lite_jobs/screens/postJobs/widgets/image_card.dart';
 import 'package:lite_jobs/utils/utils.dart';

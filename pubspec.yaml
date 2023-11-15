@@ -47,6 +47,7 @@ dependencies:
   google_sign_in: ^6.1.5
   http: ^1.1.0
   image_picker: ^1.0.4
+  image_stack: ^2.1.1
   intl: ^0.18.1
   line_icons: ^2.0.3
   permission_handler: ^11.0.1

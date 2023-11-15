@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:lite_jobs/provider/searc_screen_provider.dart';
+import 'package:lite_jobs/controller/provider/searc_screen_provider.dart';
 import 'package:provider/provider.dart';
 
 class SpecialAppbar extends StatelessWidget implements PreferredSizeWidget {

@@ -4,7 +4,7 @@ import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../server/auth/storage_methods.dart';
+import '../../server/auth/storage_methods.dart';
 
 class EditProfilePageProvider extends ChangeNotifier {
   List<dynamic> skills = [];

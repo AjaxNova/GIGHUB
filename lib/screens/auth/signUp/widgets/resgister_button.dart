@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../provider/sign_up_screen_provider.dart';
+import '../../../../controller/provider/sign_up_screen_provider.dart';
 import '../../../../utils/colors/colors.dart';
 
 ElevatedButton registerButton(
