@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:lite_jobs/screens/auth/signIn/sing_in.dart';
-import 'package:lite_jobs/screens/auth/signUp/sing_up.dart';
-import 'package:lite_jobs/screens/auth/widget/custom_textfield.dart';
 import 'package:lite_jobs/server/auth/auth_functions.dart';
 import 'package:lite_jobs/utils/colors/colors.dart';
 import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/auth/widget/custom_textfield.dart';
 
 class ForgetPasswordPage extends StatefulWidget {
   const ForgetPasswordPage({super.key});
@@ -88,7 +86,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 2,
-                  backgroundColor: a,
+                  backgroundColor: primaryColor,
                   minimumSize: Size(size.width * 0.8, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(6),
@@ -108,9 +106,9 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                     if (context.mounted) {
                       Utils().showSnackBarMessage(
                           context: context, content: responce);
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => const SignInPage(),
-                      ));
+                      // Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      //   builder: (context) => const SignInPage(),
+                      // ));
                     }
                   } else {
                     if (context.mounted) {
@@ -156,9 +154,9 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => const SignUpPage(),
-                        ));
+                        // Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        //   builder: (context) => const SignUpPage(),
+                        // ));
                       },
                       child: Text(
                         "Register",

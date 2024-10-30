@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lite_jobs/common/constants/constants.dart';
 
 class VectorImage extends StatelessWidget {
   const VectorImage({
@@ -11,26 +12,20 @@ class VectorImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        SizedBox(
-          height: size.height * .28,
-          width: size.width * 0.75,
-          child: SvgPicture.asset("assets/images/logIn.svg"),
-        ),
-        // Positioned(
-        //   top: 20,
-        //   left: 12,
-        //   child: InkWell(
-        //     onTap: () {
-        //       Navigator.pop(context);
-        //     },
-        //     child: const LineIcon.arrowCircleLeft(
-        //       size: 44,
-        //     ),
-        //   ),
-        // ),
-      ],
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.white10,
+              screenBackgroundColor,
+            ]),
+      ),
+      child: SvgPicture.asset(
+        "assets/images/logIn.svg",
+        height: size.height * 20,
+      ),
     );
   }
 }

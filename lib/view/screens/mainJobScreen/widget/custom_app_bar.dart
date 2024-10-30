@@ -2,29 +2,25 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lite_jobs/controller/provider/auth_provider.dart';
+import 'package:lite_jobs/controller/provider/home_screen_provider.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/screens/profilePage/profile_page.dart';
-import 'package:lite_jobs/screens/searchScreen/search_screen.dart';
 import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/profilePage/profile_page.dart';
+import 'package:lite_jobs/view/screens/searchScreen/search_screen.dart';
 import 'package:provider/provider.dart';
 
-import '../../../controller/provider/home_screen_provider.dart';
-
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+  final String uid;
+  const CustomAppBar({super.key, required this.uid});
 
   @override
   Size get preferredSize => const Size.fromHeight(100.0);
 
   @override
   Widget build(BuildContext context) {
-    final prov = Provider.of<AuthProvider>(context, listen: false);
     return StreamBuilder(
-      stream: FirebaseFirestore.instance
-          .collection('users')
-          .doc(prov.getUserModel.uid)
-          .snapshots(),
+      stream:
+          FirebaseFirestore.instance.collection('users').doc(uid).snapshots(),
       builder: (context,
           AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {

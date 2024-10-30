@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
+import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
+import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/screens/chatScreen/chat_screen.dart';
-import 'package:lite_jobs/screens/mainJobScreen/main_screen.dart';
+import 'package:lite_jobs/utils/colors/colors.dart';
 import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/chatScreen/chat_screen.dart';
+import 'package:lite_jobs/view/screens/mainJobScreen/main_screen.dart';
 import 'package:provider/provider.dart';
-
-import '../../common/widgets/special_appbar_widget.dart';
-import '../../controller/provider/auth_provider.dart';
-import '../../utils/colors/colors.dart';
 
 class CurrentJobResponcePageApplied extends StatefulWidget {
   const CurrentJobResponcePageApplied({super.key, required this.jobid});
@@ -29,7 +28,7 @@ class _CurrentJobResponcePageAppliedState
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final prov = Provider.of<AuthProvider>(context, listen: false);
+    final prov = Provider.of<AuthProviderData>(context, listen: false);
     return SafeArea(
       child: Scaffold(
         appBar: SpecialAppbar(
@@ -128,13 +127,15 @@ class _CurrentJobResponcePageAppliedState
                           ),
                           jobModel.jobStatus == "not selected"
                               ? SizedBox(
-                                  width: size.width * 0.8,
                                   child: Center(
-                                    child: Text(
-                                      "have not selected anyone yet",
-                                      style: GoogleFonts.inter(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 25,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        "have not selected anyone yet",
+                                        style: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 25,
+                                        ),
                                       ),
                                     ),
                                   ),

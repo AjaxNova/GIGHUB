@@ -3,7 +3,7 @@ import 'package:lite_jobs/models/user_model.dart';
 
 import '../../server/auth/auth_functions.dart';
 
-class AuthProvider extends ChangeNotifier {
+class AuthProviderData extends ChangeNotifier {
   String? uid;
 
   final AuthenticationMethods _authMeth = AuthenticationMethods();

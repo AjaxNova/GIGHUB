@@ -10,24 +10,24 @@ class ForgetPasswordWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        TextButton(
-            onPressed: () {
-              Utils().navigateMe(
-                  context: context, page: const ForgetPasswordPage());
-            },
-            child: const Text("Forget password")),
-        const Icon(
-          Icons.info,
-          color: Colors.blue,
-          size: 15,
-        ),
-        const SizedBox(
-          width: 39,
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(right: 40),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          TextButton(
+              onPressed: () {
+                Utils().navigateMe(
+                    context: context, page: const ForgetPasswordPage());
+              },
+              child: const Text("Forget password")),
+          const Icon(
+            Icons.info,
+            color: Colors.blue,
+            size: 15,
+          ),
+        ],
+      ),
     );
   }
 }

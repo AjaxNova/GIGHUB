@@ -1,64 +1,96 @@
-import 'package:flutter/material.dart';
-import 'package:lite_jobs/controller/provider/auth_provider.dart';
-import 'package:lite_jobs/screens/finishYourProfile/finish_your_profile_page.dart';
-import 'package:lite_jobs/server/auth/auth_functions.dart';
-import 'package:lite_jobs/utils/utils.dart';
-import 'package:provider/provider.dart';
+// import 'package:flutter/material.dart';
+// import 'package:lite_jobs/controller/provider/auth_provider.dart';
+// import 'package:lite_jobs/server/auth/auth_functions.dart';
+// import 'package:lite_jobs/utils/utils.dart';
+// import 'package:lite_jobs/view/screens/finishYourProfile/finish_your_profile_page.dart';
+// import 'package:lite_jobs/view/screens/mainJobScreen/main_screen.dart';
+// import 'package:provider/provider.dart';
 
-import '../../screens/mainJobScreen/main_screen.dart';
+// class SigninProvider extends ChangeNotifier {
+//   final AuthenticationMethods authenticationMethods = AuthenticationMethods();
+//   bool isLoading = false;
+//   bool isLoadingGoogle = false;
+//   bool isObscure = true;
 
-class SigninProvider extends ChangeNotifier {
-  final AuthenticationMethods authenticationMethods = AuthenticationMethods();
-  bool isLoading = false;
-  bool isLoadingGoogle = false;
+//   bool hasError = false;
 
-  changeIsLoading() {
-    if (isLoading == true) {
-      isLoading = false;
-    } else {
-      isLoading = true;
-    }
-    notifyListeners();
-  }
+//   bool isBackAllowed = true;
 
-  onSignInButtonClick({
-    required String email,
-    required String password,
-    required BuildContext context,
-  }) async {
-    changeIsLoading();
-    String responce = await authenticationMethods.signInUser(
-        email: email, password: password);
-    changeIsLoading();
+//   changeTextfieldErrorStatus() {
+//     hasError = true;
+//     notifyListeners();
+//   }
 
-    if (responce == "signed In Succesfully ") {
-      AuthProvider authProvider =
-          Provider.of<AuthProvider>(context, listen: false);
-      await authProvider.refreshUser();
+//   initAuthError() {
+//     hasError = false;
+//     notifyListeners();
+//   }
 
-      if (context.mounted) {
-        Utils().showSnackBarMessage(context: context, content: responce);
-        if (authProvider.getUserModel.finishProfile == true) {
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => const HomeScreen()),
-            (route) => false,
-          );
-        } else {
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(
-                builder: (context) => FinishYourProfilePage(
-                      userModel: authProvider.getUserModel,
-                    )),
-            (route) => false,
-          );
-        }
-      }
-    } else {
-      if (context.mounted) {
-        Utils().showSnackBarMessage(context: context, content: responce);
-      }
-    }
-  }
-}
+//   obscureClicked() {
+//     if (isObscure) {
+//       isObscure = false;
+//     } else {
+//       isObscure = true;
+//     }
+//     notifyListeners();
+//   }
+
+//   loadingOn() {
+//     isLoading = true;
+//     isBackAllowed = false;
+//     notifyListeners();
+//   }
+
+//   loadingOff() {
+//     isLoading = false;
+//     isBackAllowed = true;
+//     notifyListeners();
+//   }
+
+//   onSignInButtonClick({
+//     required String email,
+//     required String password,
+//     required BuildContext context,
+//   }) async {
+//     loadingOn();
+
+//     String responce = await authenticationMethods.signInUser(
+//         email: email, password: password);
+
+//     if (responce == "signed In Succesfully ") {
+//       AuthProviderData authProvider =
+//           Provider.of<AuthProviderData>(context, listen: false);
+//       await authProvider.refreshUser();
+
+//       if (context.mounted) {
+//         Utils().showSnackBarMessage(context: context, content: responce);
+//         if (authProvider.getUserModel.finishProfile == true) {
+//           loadingOff();
+
+//           Navigator.pushAndRemoveUntil(
+//             context,
+//             MaterialPageRoute(builder: (context) => const HomeScreen()),
+//             (route) => false,
+//           );
+//         } else {
+//           loadingOff();
+
+//           Navigator.pushAndRemoveUntil(
+//             context,
+//             MaterialPageRoute(
+//                 builder: (context) => FinishYourProfilePage(
+//                       userModel: authProvider.getUserModel,
+//                     )),
+//             (route) => false,
+//           );
+//         }
+//       }
+//     } else {
+//       loadingOff();
+
+//       if (context.mounted) {
+//         Utils().showSnackBarMessage(context: context, content: responce);
+//       }
+//     }
+//   }
+// }

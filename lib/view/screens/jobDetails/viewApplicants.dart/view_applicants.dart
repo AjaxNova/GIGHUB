@@ -6,10 +6,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/screens/jobDetails/viewApplicants.dart/applicantDetails/applicant_details.dart';
-import 'package:lite_jobs/screens/profilePage/profile_page.dart';
 import 'package:lite_jobs/utils/colors/colors.dart';
 import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/jobDetails/viewApplicants.dart/applicantDetails/applicant_details.dart';
+import 'package:lite_jobs/view/screens/profilePage/profile_page.dart';
 
 class ApplicantWidgwt extends StatelessWidget {
   final JobModel job;

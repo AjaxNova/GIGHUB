@@ -5,11 +5,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/controller/provider/home_screen_provider.dart';
+import 'package:lite_jobs/core/res/user_data.dart';
+import 'package:lite_jobs/features/splashScreen/domain/entities/user_model_entity.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/screens/mainJobScreen/widget/custom_app_bar.dart';
-import 'package:lite_jobs/screens/mainJobScreen/widget/job_card_widget.dart';
-import 'package:lite_jobs/screens/postJobs/post_job.dart';
 import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/mainJobScreen/widget/custom_app_bar.dart';
+import 'package:lite_jobs/view/screens/mainJobScreen/widget/job_card_widget.dart';
+import 'package:lite_jobs/view/screens/postJobs/post_job.dart';
 import 'package:provider/provider.dart';
 
 import 'widget/custom_drawer_widget.dart';
@@ -19,7 +21,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    UserModel user = Provider.of<AuthProvider>(context).getUserModel;
+    UserModelEntity user = globalUserModel;
     final Size size = MediaQuery.of(context).size;
 
     return SafeArea(
@@ -32,7 +34,9 @@ class HomeScreen extends StatelessWidget {
           child: const FaIcon(FontAwesomeIcons.plus),
         ),
         drawer: const CustomDrawerWidget(),
-        appBar: const CustomAppBar(),
+        appBar: CustomAppBar(
+          uid: user.uid,
+        ),
         body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Consumer<HomeScreenProvider>(
@@ -116,7 +120,7 @@ class HomeScreen extends StatelessWidget {
   Column _hasJobsAvailable(
       AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot,
       BuildContext context) {
-    final prov = Provider.of<AuthProvider>(context, listen: false);
+    final prov = Provider.of<AuthProviderData>(context, listen: false);
     final Size size = MediaQuery.of(context).size;
 
     List<JobModel> jobList =
@@ -173,5 +177,14 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class HomeScreenn extends StatelessWidget {
+  const HomeScreenn({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold();
   }
 }

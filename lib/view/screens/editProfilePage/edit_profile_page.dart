@@ -7,13 +7,13 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
 import 'package:lite_jobs/controller/provider/edit_your_profile_provider.dart';
 import 'package:lite_jobs/models/user_model.dart';
+import 'package:lite_jobs/utils/colors/colors.dart';
+import 'package:lite_jobs/utils/utils.dart';
 import 'package:provider/provider.dart';
 
-import '../../common/widgets/special_appbar_widget.dart';
-import '../../utils/colors/colors.dart';
-import '../../utils/utils.dart';
 import '../auth/functions/pick_image.dart';
 import '../auth/widget/custom_textfield.dart';
 
@@ -40,7 +40,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     super.initState();
     _setValues();
     _nameController.text = widget.userModel.username;
-    _bioController.text = widget.userModel.bio;
+    _bioController.text = widget.userModel.bio ?? 'empty bio';
     _ageController.text = widget.userModel.age;
     _highestQualification.text = widget.userModel.highestQual;
   }

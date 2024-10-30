@@ -2,16 +2,17 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:lite_jobs/controller/provider/auth_provider.dart';
+// import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/screens/auth/signUp/sing_up.dart';
-import 'package:lite_jobs/screens/mainJobScreen/main_screen.dart';
 import 'package:lite_jobs/server/auth/storage_methods.dart';
-import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/mainJobScreen/main_screen.dart';
 import 'package:provider/provider.dart';
 
 class AuthenticationMethods {
@@ -108,7 +109,7 @@ class AuthenticationMethods {
 
           UserCredential cred = await _auth.createUserWithEmailAndPassword(
               email: email, password: password);
-          final prov = Provider.of<AuthProvider>(context, listen: false);
+          final prov = Provider.of<AuthProviderData>(context, listen: false);
           prov.setUid(cred.user!.uid);
 
           await FirebaseAuth.instance.signOut();
@@ -238,14 +239,14 @@ class AuthenticationMethods {
             await _auth.signInWithCredential(credential);
 
         if (userCredential.user != null) {
-          final prov = Provider.of<AuthProvider>(context, listen: false);
+          final prov = Provider.of<AuthProviderData>(context, listen: false);
           prov.setUid(userCredential.user!.uid);
 
           if (userCredential.additionalUserInfo!.isNewUser) {
             responce = "please fill out some informations";
-            Utils().navigateMe(
-                context: context,
-                page: SignUpPage(isGoogleSignin: true, user: userCredential));
+            // Utils().navigateMe(
+            //     context: context,
+            //     page: SignUpPage(isGoogleSignin: true, user: userCredential));
             return responce;
             // Utils().showSnackBarMessage(
             //     context: context, content: "fill some informations");

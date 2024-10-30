@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:blurry_modal_progress_hud/blurry_modal_progress_hud.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -8,13 +7,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:lite_jobs/controller/provider/select_person_from_applied_list.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/screens/jobDescription/jJobHostdetailsPage/widgets/custom_listtile.dart';
-import 'package:lite_jobs/screens/jobDescription/jJobHostdetailsPage/widgets/custom_listtile_for_recent.dart';
-import 'package:lite_jobs/screens/jobDescription/jJobHostdetailsPage/widgets/custom_listtile_for_review.dart';
-import 'package:lite_jobs/screens/jobDescription/jJobHostdetailsPage/widgets/review_card.dart';
-import 'package:lite_jobs/screens/mainJobScreen/main_screen.dart';
 import 'package:lite_jobs/utils/colors/colors.dart';
 import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/jobDescription/jJobHostdetailsPage/widgets/custom_listtile.dart';
+import 'package:lite_jobs/view/screens/jobDescription/jJobHostdetailsPage/widgets/custom_listtile_for_recent.dart';
+import 'package:lite_jobs/view/screens/jobDescription/jJobHostdetailsPage/widgets/custom_listtile_for_review.dart';
+import 'package:lite_jobs/view/screens/mainJobScreen/main_screen.dart';
 import 'package:provider/provider.dart';
 
 class JobHostDetailsPage extends StatelessWidget {
@@ -165,23 +163,22 @@ class JobHostDetailsPage extends StatelessWidget {
                         height: 3,
                       ),
                     ),
-                    Stack(children: [
-                      const CustomTileForReview(),
+                    const Stack(children: [
+                      CustomTileForReview(),
                       Positioned(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 22),
-                          child: SizedBox(
-                            height: 250,
-                            child: AppinioSwiper(
-                              cardsSpacing: 20,
-                              backgroundCardsCount: 2,
-                              loop: true,
-                              cardsBuilder: (context, index) {
-                                return const ReviewCard();
-                              },
-                              cardsCount: 5,
-                            ),
-                          ),
+                          padding: EdgeInsets.symmetric(vertical: 22),
+                          child: SizedBox(height: 250, child: SizedBox()
+                              // AppinioSwiper(
+                              //   cardsSpacing: 20,
+                              //   backgroundCardsCount: 2,
+                              //   loop: true,
+                              //   cardsBuilder: (context, index) {
+                              //     return const ReviewCard();
+                              //   },
+                              //   cardsCount: 5,
+                              // ),
+                              ),
                         ),
                       ),
                     ]),

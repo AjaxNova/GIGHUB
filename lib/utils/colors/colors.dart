@@ -6,7 +6,10 @@ const Color singInButtonColor = Color(0xFFA6C9FF);
 const Color kWhiteColor = Colors.white;
 const Color kGreyColor = Colors.grey;
 
-const Color a = Color(0xFFA7C8FE);
+const Color primaryColor = Color(0xFFA7C8FE);
+
+Color errorColor = const Color.fromARGB(255, 251, 149, 149);
+
 Color backCard = const Color(0xFF808080);
 
 const Color customGreyColor = Color(0xFFD9D9D9);

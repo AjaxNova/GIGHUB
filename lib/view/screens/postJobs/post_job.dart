@@ -7,12 +7,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
 import 'package:lite_jobs/controller/provider/post_job_provider.dart';
-import 'package:lite_jobs/screens/mainJobScreen/main_screen.dart';
-import 'package:lite_jobs/screens/postJobs/widgets/image_card.dart';
+import 'package:lite_jobs/utils/colors/colors.dart';
 import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/mainJobScreen/main_screen.dart';
+import 'package:lite_jobs/view/screens/postJobs/widgets/image_card.dart';
 import 'package:provider/provider.dart';
-
-import '../../utils/colors/colors.dart';
 
 class PostJobPage extends StatefulWidget {
   const PostJobPage({super.key});
@@ -242,20 +241,23 @@ class _PostJobPageState extends State<PostJobPage> {
                     ),
                   ),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: IconButton(
-                    onPressed: () {
-                      values.addRequirement(_requirementsController);
-                    },
-                    icon: const Icon(Icons.add_box, size: 52),
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.black,
-                      backgroundColor: test1,
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
+                const SizedBox(
+                  width: 10,
+                ),
+                IconButton(
+                  onPressed: () {
+                    values.addRequirement(_requirementsController);
+                  },
+                  icon: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Icon(Icons.add_box, size: 32),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.black,
+                    backgroundColor: test1,
+                    elevation: 10,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
                     ),
                   ),
                 ),

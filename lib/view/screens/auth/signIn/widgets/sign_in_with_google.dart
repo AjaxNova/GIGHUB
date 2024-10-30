@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../../../server/auth/auth_functions.dart';
-import '../../../../utils/colors/colors.dart';
+import 'package:lite_jobs/server/auth/auth_functions.dart';
+import 'package:lite_jobs/utils/colors/colors.dart';
 
 Widget signInWithGoogleButton(
     {required Size size,

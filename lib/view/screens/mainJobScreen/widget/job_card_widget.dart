@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:lite_jobs/screens/appliedJobStatus/applied_job_status.dart';
-import 'package:lite_jobs/screens/selectedUserStatusPage/selected_user_status.dart';
+import 'package:lite_jobs/models/user_model.dart';
+import 'package:lite_jobs/utils/colors/colors.dart';
 import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/appliedJobStatus/applied_job_status.dart';
+import 'package:lite_jobs/view/screens/selectedUserStatusPage/selected_user_status.dart';
 
-import '../../../models/user_model.dart';
-import '../../../utils/colors/colors.dart';
 import '../../jobDescription/job_description_page.dart';
 import '../../postedJobStatus/posted_job_status.dart';
 

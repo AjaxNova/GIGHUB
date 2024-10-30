@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
+import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
 import 'package:lite_jobs/controller/provider/auth_provider.dart';
-import 'package:lite_jobs/screens/jobDetails/viewApplicants.dart/view_applicants.dart';
+import 'package:lite_jobs/models/user_model.dart';
+import 'package:lite_jobs/utils/colors/colors.dart';
+import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/jobDetails/viewApplicants.dart/view_applicants.dart';
 import 'package:provider/provider.dart';
 
-import '../../common/widgets/special_appbar_widget.dart';
-import '../../models/user_model.dart';
-import '../../utils/colors/colors.dart';
-import '../../utils/utils.dart';
 import '../chatScreen/chat_screen.dart';
 
 class CurrentJobResponcePagePosted extends StatelessWidget {
@@ -26,7 +26,7 @@ class CurrentJobResponcePagePosted extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final prov = Provider.of<AuthProvider>(context, listen: false);
+    final prov = Provider.of<AuthProviderData>(context, listen: false);
 
     return SafeArea(
       child: StreamBuilder(
@@ -284,6 +284,7 @@ class CurrentJobResponcePagePosted extends StatelessWidget {
                             },
                             appBarTitle: "Status"),
                         body: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             SizedBox(height: size.height * 0.046),
                             SizedBox(
@@ -359,39 +360,44 @@ class CurrentJobResponcePagePosted extends StatelessWidget {
                             SizedBox(
                               height: size.height * 0.016,
                             ),
-                            SizedBox(
-                              // color: Colors.red,
-                              width: size.width * 0.89,
-                              child: Center(
-                                  child: jobMod.isAcceptedBySelectedUser ==
-                                              false &&
-                                          jobMod.isRejectedBySelectedUser ==
-                                              false
-                                      ? Text(
-                                          "Sometimes people have trouble to reply soon feel free to wait or you could always change your prefrence anytime",
-                                          style: GoogleFonts.inter(
-                                            fontSize: 15.5,
-                                            wordSpacing: .5,
-                                            letterSpacing: .1,
-                                          ),
-                                        )
-                                      : jobMod.isAcceptedBySelectedUser
-                                          ? Text(
-                                              "now you can chat with ayush arun in the chat screen . pe polite and humble in the chat always remember give respect and take respect",
-                                              style: GoogleFonts.inter(
-                                                fontSize: 15.5,
-                                                wordSpacing: .5,
-                                                letterSpacing: .1,
-                                              ),
-                                            )
-                                          : Text(
-                                              "its ok sometimes people have some inconvenience , now you can pick from the other users",
-                                              style: GoogleFonts.inter(
-                                                fontSize: 15.5,
-                                                wordSpacing: .5,
-                                                letterSpacing: .1,
-                                              ),
-                                            )),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: SizedBox(
+                                // color: Colors.red,
+                                child: Center(
+                                    child: jobMod.isAcceptedBySelectedUser ==
+                                                false &&
+                                            jobMod.isRejectedBySelectedUser ==
+                                                false
+                                        ? Text(
+                                            "Sometimes people have trouble to reply soon feel free to wait or you could always change your prefrence anytime",
+                                            style: GoogleFonts.inter(
+                                              fontSize: 15.5,
+                                              wordSpacing: .5,
+                                              letterSpacing: .1,
+                                            ),
+                                          )
+                                        : jobMod.isAcceptedBySelectedUser
+                                            ? SizedBox(
+                                                child: Text(
+                                                  "now you can chat with them in the chat screen . pe polite and humble in the chat always remember give respect and take respect",
+                                                  style: GoogleFonts.inter(
+                                                    fontSize: 15.5,
+                                                    wordSpacing: .5,
+                                                    letterSpacing: .1,
+                                                  ),
+                                                ),
+                                              )
+                                            : Text(
+                                                "its ok sometimes people have some inconvenience , now you can pick from the other users",
+                                                style: GoogleFonts.inter(
+                                                  fontSize: 15.5,
+                                                  wordSpacing: .5,
+                                                  letterSpacing: .1,
+                                                ),
+                                                textAlign: TextAlign.center,
+                                              )),
+                              ),
                             ),
                             SizedBox(
                               height: size.height * 0.09,

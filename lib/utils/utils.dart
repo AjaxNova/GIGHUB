@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:lite_jobs/ssss/api_class.dart';
 
 class Utils {
-  List<ResortData> allResortList = [];
-
   Size getScreenSize(context) {
     Size data = MediaQuery.of(context).size;
     return data;
   }
 
   showSnackBarMessage(
-      {required BuildContext context, required String content}) {
+      {required BuildContext context,
+      required String content,
+      Color color = Colors.orange}) {
+    ScaffoldMessenger.of(context).removeCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10), topRight: Radius.circular(10))),
-        backgroundColor: Colors.orange,
+        backgroundColor: color,
         content: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

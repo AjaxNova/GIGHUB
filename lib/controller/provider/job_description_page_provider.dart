@@ -24,7 +24,7 @@ class JobDescriptionProvider extends ChangeNotifier {
   }
 
   Future<String> applyForJob(String jobId, BuildContext context) async {
-    final prov = Provider.of<AuthProvider>(context, listen: false);
+    final prov = Provider.of<AuthProviderData>(context, listen: false);
     await prov.refreshUser();
 
     String res = "something went wrong";
@@ -53,7 +53,7 @@ class JobDescriptionProvider extends ChangeNotifier {
   }
 
   cancelJobApplication(String jobId, BuildContext context) async {
-    final prov = Provider.of<AuthProvider>(context, listen: false);
+    final prov = Provider.of<AuthProviderData>(context, listen: false);
     String res = "something went wrong";
     try {
       await FirebaseFirestore.instance
@@ -75,7 +75,7 @@ class JobDescriptionProvider extends ChangeNotifier {
   }
 
   Future<String> cancelPostedjob(String jobId, BuildContext context) async {
-    final prov = Provider.of<AuthProvider>(context, listen: false);
+    final prov = Provider.of<AuthProviderData>(context, listen: false);
     String res = "something went wrong";
     try {
       await FirebaseFirestore.instance

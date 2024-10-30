@@ -60,9 +60,9 @@ import 'package:line_icons/line_icon.dart';
 import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
 import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/screens/selectedUserStatusPage/widget/responce_body.dart';
 import 'package:lite_jobs/utils/colors/colors.dart';
 import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/selectedUserStatusPage/widget/responce_body.dart';
 import 'package:provider/provider.dart';
 
 class SelectedUserStatus extends StatelessWidget {
@@ -122,7 +122,7 @@ class JobCancelledByPostedUser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final prov = Provider.of<AuthProvider>(context, listen: false);
+    final prov = Provider.of<AuthProviderData>(context, listen: false);
 
     final Size size = MediaQuery.of(context).size;
     return SafeArea(

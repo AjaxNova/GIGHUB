@@ -14,7 +14,7 @@ class UserModel {
   dynamic skills;
   String highestQual;
   String photoUrl;
-  String bio;
+  String? bio;
   bool finishProfile;
   dynamic savedJobs;
   dynamic appliedJobs;

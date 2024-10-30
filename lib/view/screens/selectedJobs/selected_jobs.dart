@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
 import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/screens/mainJobScreen/widget/job_card_widget.dart';
+import 'package:lite_jobs/view/screens/mainJobScreen/widget/job_card_widget.dart';
 import 'package:provider/provider.dart';
 
 class SelectedJobs extends StatelessWidget {
@@ -11,7 +11,7 @@ class SelectedJobs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<AuthProvider>(context, listen: false);
+    final user = Provider.of<AuthProviderData>(context, listen: false);
     return SafeArea(
         child: Scaffold(
       appBar: SpecialAppbar(

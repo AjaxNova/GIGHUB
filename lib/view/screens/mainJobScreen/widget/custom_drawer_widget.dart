@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lite_jobs/screens/appliedJobsPage/applied_jobs_page.dart';
-import 'package:lite_jobs/screens/auth/initialPage/initial_page.dart';
-import 'package:lite_jobs/screens/chatScreen/chat_screen.dart';
-import 'package:lite_jobs/screens/postedJobsdetails/posted_jobs_page.dart';
-import 'package:lite_jobs/screens/privacyPolicy/privacy_policy.dart';
 import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/appliedJobsPage/applied_jobs_page.dart';
+import 'package:lite_jobs/view/screens/auth/initialPage/initial_page.dart';
+import 'package:lite_jobs/view/screens/chatScreen/chat_screen.dart';
+import 'package:lite_jobs/view/screens/postedJobsdetails/posted_jobs_page.dart';
+import 'package:lite_jobs/view/screens/privacyPolicy/privacy_policy.dart';
 
 class CustomDrawerWidget extends StatefulWidget {
   const CustomDrawerWidget({super.key});

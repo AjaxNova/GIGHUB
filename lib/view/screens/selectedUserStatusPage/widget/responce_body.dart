@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
-
-import '../../../models/user_model.dart';
-import '../../../utils/colors/colors.dart';
+import 'package:lite_jobs/models/user_model.dart';
+import 'package:lite_jobs/utils/colors/colors.dart';
 
 class ResponceBody extends StatelessWidget {
   const ResponceBody({super.key, required this.size, this.usser, this.job});

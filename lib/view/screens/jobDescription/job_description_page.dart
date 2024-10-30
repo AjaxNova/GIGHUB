@@ -6,14 +6,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_stack/image_stack.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:lite_jobs/common/widgets/requirements_text_widget.dart';
+import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/controller/provider/job_description_page_provider.dart';
 import 'package:lite_jobs/models/user_model.dart';
-import 'package:lite_jobs/screens/jobDetails/viewApplicants.dart/view_applicants.dart';
+import 'package:lite_jobs/utils/colors/colors.dart';
 import 'package:lite_jobs/utils/utils.dart';
+import 'package:lite_jobs/view/screens/jobDetails/viewApplicants.dart/view_applicants.dart';
 import 'package:provider/provider.dart';
 
-import '../../controller/provider/auth_provider.dart';
-import '../../utils/colors/colors.dart';
 import '../appliedJobStatus/applied_job_status.dart';
 import '../auth/widget/custom_button.dart';
 import '../postedJobStatus/posted_job_status.dart';
@@ -390,7 +390,7 @@ class JobDescriptionPage extends StatelessWidget {
                                         Expanded(
                                           child: CustomButton(
                                               buttonText: "check Status",
-                                              color: a,
+                                              color: primaryColor,
                                               borderColor: Colors.grey,
                                               elevation: 0,
                                               onTap: () {
@@ -431,7 +431,7 @@ class JobDescriptionPage extends StatelessWidget {
                                   return const CircularProgressIndicator();
                                 } else {
                                   if (snapshot.hasData) {
-                                    final prov = Provider.of<AuthProvider>(
+                                    final prov = Provider.of<AuthProviderData>(
                                         context,
                                         listen: false);
                                     final jobSelected = JobModel.fromsnap(
@@ -460,7 +460,7 @@ class JobDescriptionPage extends StatelessWidget {
                                               Expanded(
                                                 child: CustomButton(
                                                     buttonText: "check Status",
-                                                    color: a,
+                                                    color: primaryColor,
                                                     borderColor: Colors.grey,
                                                     elevation: 0,
                                                     onTap: () {

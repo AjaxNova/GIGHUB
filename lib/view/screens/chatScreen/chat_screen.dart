@@ -6,20 +6,19 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
+import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/models/user_model.dart';
 import 'package:lite_jobs/utils/colors/colors.dart';
+import 'package:lite_jobs/utils/utils.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
-
-import '../../controller/provider/auth_provider.dart';
-import '../../utils/utils.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final prov = Provider.of<AuthProvider>(context, listen: false);
+    final prov = Provider.of<AuthProviderData>(context, listen: false);
     return SafeArea(
       child: Scaffold(
         appBar: SpecialAppbar(
@@ -215,7 +214,7 @@ class _SinglechatPageState extends State<SinglechatPage> {
   @override
   Widget build(BuildContext context) {
     log("this is the sender user:'${widget.senderUid}' and this is the poster : ${widget.recieverUid}' ");
-    final prov = Provider.of<AuthProvider>(context, listen: false);
+    final prov = Provider.of<AuthProviderData>(context, listen: false);
     return SafeArea(
         child: StreamBuilder(
       stream: FirebaseFirestore.instance
@@ -228,33 +227,33 @@ class _SinglechatPageState extends State<SinglechatPage> {
               UserModel.fromSnap(snapshot.data as DocumentSnapshot<Object?>);
 
           return Scaffold(
-            bottomNavigationBar: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                  height: 65,
-                  child: MessageBar(
-                    onSend: (p0) async {
-                      final CommentModel model = CommentModel(
-                          message: p0,
-                          recieverId: selectedUserMod.uid,
-                          senderId: prov.getUserModel.uid,
-                          sentTime: DateTime.now());
+            // bottomNavigationBar: Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: SizedBox(
+            //       height: 65,
+            //       child: MessageBar(
+            //         onSend: (p0) async {
+            //           final CommentModel model = CommentModel(
+            //               message: p0,
+            //               recieverId: selectedUserMod.uid,
+            //               senderId: prov.getUserModel.uid,
+            //               sentTime: DateTime.now());
 
-                      // await FirebaseFirestore.instance
-                      //     .collection('chat')
-                      //     .doc(docIdd)
-                      //     .set({
-                      //   'users': [widget.theUser, widget.selecteduser]
-                      // });
+            //           // await FirebaseFirestore.instance
+            //           //     .collection('chat')
+            //           //     .doc(docIdd)
+            //           //     .set({
+            //           //   'users': [widget.theUser, widget.selecteduser]
+            //           // });
 
-                      await FirebaseFirestore.instance
-                          .collection('chat')
-                          .doc(docIdd)
-                          .collection('messages')
-                          .add(model.toJson());
-                    },
-                  )),
-            ),
+            //           await FirebaseFirestore.instance
+            //               .collection('chat')
+            //               .doc(docIdd)
+            //               .collection('messages')
+            //               .add(model.toJson());
+            //         },
+            //       ),),
+            // ),
             appBar: SpecialAppbar(
                 isChat: true,
                 photoUrl: selectedUserMod.photoUrl,
@@ -377,6 +376,30 @@ class _SinglechatPageState extends State<SinglechatPage> {
                       },
                     ),
                   ),
+                  SizedBox(
+                    child: MessageBar(
+                      onSend: (p0) async {
+                        final CommentModel model = CommentModel(
+                            message: p0,
+                            recieverId: selectedUserMod.uid,
+                            senderId: prov.getUserModel.uid,
+                            sentTime: DateTime.now());
+
+                        // await FirebaseFirestore.instance
+                        //     .collection('chat')
+                        //     .doc(docIdd)
+                        //     .set({
+                        //   'users': [widget.theUser, widget.selecteduser]
+                        // });
+
+                        await FirebaseFirestore.instance
+                            .collection('chat')
+                            .doc(docIdd)
+                            .collection('messages')
+                            .add(model.toJson());
+                      },
+                    ),
+                  )
                 ],
               ),
             ),

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:lite_jobs/common/widgets/special_appbar_widget.dart';
 import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/controller/provider/searc_screen_provider.dart';
+import 'package:lite_jobs/models/user_model.dart';
 import 'package:provider/provider.dart';
 
-import '../../models/user_model.dart';
 import '../mainJobScreen/widget/job_card_widget.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -27,7 +27,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final provAuth = Provider.of<AuthProvider>(context, listen: false);
+    final provAuth = Provider.of<AuthProviderData>(context, listen: false);
 
     return WillPopScope(
       onWillPop: () async {
@@ -46,6 +46,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     Provider.of<SearchScreenProvider>(context, listen: false);
                 prov.isSearchingToFalse();
                 prov.clearSearchName();
+
                 Navigator.of(context).pop();
               },
               appBarTitle: "search",
