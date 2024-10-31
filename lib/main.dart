@@ -16,6 +16,7 @@ import 'package:lite_jobs/controller/provider/searc_screen_provider.dart';
 import 'package:lite_jobs/controller/provider/select_person_from_applied_list.dart';
 import 'package:lite_jobs/controller/provider/selected_user_status_provider.dart';
 import 'package:lite_jobs/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:lite_jobs/features/finishYourProfile/presentation/bloc/finish_profile_bloc.dart';
 import 'package:lite_jobs/features/splashScreen/presentation/bloc/splash_screen_bloc.dart';
 import 'package:lite_jobs/features/splashScreen/presentation/pages/splash_screen.dart';
 import 'package:lite_jobs/injection_container.dart';
@@ -47,6 +48,9 @@ class LiteJobs extends StatelessWidget {
         ),
         BlocProvider<SplashScreenBloc>(
           create: (BuildContext context) => SplashScreenBloc(sl()),
+        ),
+        BlocProvider<FinishProfileBloc>(
+          create: (BuildContext context) => FinishProfileBloc(sl()),
         ),
       ],
       child: MultiProvider(

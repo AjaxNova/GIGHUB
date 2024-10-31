@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lite_jobs/controller/provider/auth_provider.dart';
 import 'package:lite_jobs/controller/provider/home_screen_provider.dart';
+import 'package:lite_jobs/core/res/user_model.dart';
 import 'package:lite_jobs/models/user_model.dart';
 import 'package:lite_jobs/utils/utils.dart';
 import 'package:lite_jobs/view/screens/mainJobScreen/widget/custom_drawer_widget.dart';
@@ -13,11 +13,13 @@ import 'package:lite_jobs/view/screens/postJobs/post_job.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, required this.userModelGlobal});
+
+  final UserModelGlobal userModelGlobal;
 
   @override
   Widget build(BuildContext context) {
-    UserModel user = Provider.of<AuthProviderData>(context).getUserModel;
+    UserModelGlobal user = userModelGlobal;
     final Size size = MediaQuery.of(context).size;
 
     return SafeArea(
@@ -97,7 +99,7 @@ class HomeScreen extends StatelessWidget {
                           //     Provider.of<HomeScreenProvider>(context, listen: false);
                           //   prov.
 
-                          return _hasJobsAvailable(snapshot, context);
+                          return _hasJobsAvailable(user, snapshot, context);
                         } else {
                           return _hasNoJobsAvailableMethod(size);
                         }
@@ -112,16 +114,16 @@ class HomeScreen extends StatelessWidget {
   }
 
   Column _hasJobsAvailable(
+      final UserModelGlobal userModelGlobal,
       AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot,
       BuildContext context) {
-    final prov = Provider.of<AuthProviderData>(context, listen: false);
     final Size size = MediaQuery.of(context).size;
 
     List<JobModel> jobList =
         snapshot.data!.docs.map((doc) => JobModel.fromsnap(doc)).toList();
     // jobList.removeWhere((job) => job.postedBy == prov.getUserModel.uid);
     jobList.removeWhere(
-        (job) => job.postedBy == prov.getUserModel.uid || job.isCancelled);
+        (job) => job.postedBy == userModelGlobal.uid || job.isCancelled);
     // final prov = Provider.of<HomeScreenProvider>(context, listen: false);
     // prov.setJob(jobList);
 
@@ -139,7 +141,7 @@ class HomeScreen extends StatelessWidget {
             itemCount: jobList.length,
             itemBuilder: (context, index) {
               //  final job = JobModel.fromsnap(snapshot.data!.docs[index]);
-              if (jobList[index].postedBy != prov.getUserModel.uid) {}
+              if (jobList[index].postedBy != userModelGlobal.uid) {}
 
               return JobCardWidget(
                 isPosted: false,

@@ -55,6 +55,7 @@ class _SignInScreenState extends State<SignInScreen> {
               Colors.green.shade800,
               Colors.white,
               const TextStyle(color: Colors.black));
+
           if (state.userModel.finishProfile == false) {
             Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(
@@ -67,7 +68,9 @@ class _SignInScreenState extends State<SignInScreen> {
           } else {
             Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(
-                builder: (context) => const HomeScreen(),
+                builder: (context) => HomeScreen(
+                  userModelGlobal: state.userModel,
+                ),
               ),
               (route) => false,
             );

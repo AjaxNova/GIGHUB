@@ -9,9 +9,14 @@ sealed class FinishProfileState extends Equatable {
 
 final class FinishProfileInitial extends FinishProfileState {}
 
-final class FinishProfileSuccess extends FinishProfileEvent {
-  final UserModelGlobal userModel;
+final class FinishProfileSuccess extends FinishProfileState {
+  final UserModelEntity userModel;
   const FinishProfileSuccess({required this.userModel});
 }
 
-final class FinishProfileLoading extends FinishProfileEvent {}
+final class FinishProfileLoading extends FinishProfileState {}
+
+final class FinishProfileError extends FinishProfileState {
+  final String msg;
+  const FinishProfileError({required this.msg});
+}
